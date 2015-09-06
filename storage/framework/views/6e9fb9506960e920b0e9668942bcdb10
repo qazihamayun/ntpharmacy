@@ -1,0 +1,74 @@
+<?php if(count($errors->all()) > 0): ?>
+    <div class="alert alert-danger alert-block">
+        <button class="close" data-close="alert"></button>
+        <?php foreach($errors->all() as $error): ?>
+            <span><?php echo $error; ?> </span>
+        <?php endforeach; ?>
+    </div>
+
+<?php endif; ?>
+
+<?php if($message = Session::get('success')): ?>
+    <div class="alert alert-success alert-block">
+        <button class="close" data-close="alert"></button>
+        <?php if(is_array($message)): ?>
+            <?php foreach($message as $m): ?>
+                <span class="inline-block"><?php echo $m; ?> </span>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <span class="inline-block"><?php echo $message; ?> </span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+<?php if($message = Session::get('error')): ?>
+    <div class="alert alert-danger alert-dismissable">
+        <button class="close" data-close="alert"></button>
+        <?php if(is_array($message)): ?>
+            <?php foreach($message as $m): ?>
+                <span class="inline-block"><?php echo $m; ?> </span>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <span class="inline-block"><?php echo $message; ?> </span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+<?php if($message = Session::get('warning')): ?>
+    <div class="alert alert-warning alert-block">
+        <button class="close" data-close="alert"></button>
+        <?php if(is_array($message)): ?>
+            <?php foreach($message as $m): ?>
+                <span class="inline-block"><?php echo $m; ?> </span>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <span class="inline-block"><?php echo $message; ?> </span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+<?php if($message = Session::get('notice')): ?>
+    <div class="alert alert-warning alert-block">
+        <button class="close" data-close="alert"></button>
+        <?php if(is_array($message)): ?>
+            <?php foreach($message as $m): ?>
+                <span class="inline-block"><?php echo $m; ?> </span>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <span class="inline-block"><?php echo $message; ?> </span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+<?php if($message = Session::get('info')): ?>
+    <div class="alert alert-info alert-block">
+        <button class="close" data-close="alert"></button>
+        <?php if(is_array($message)): ?>
+            <?php foreach($message as $m): ?>
+                <span class="inline-block"><?php echo $m; ?> </span>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <span class="inline-block"><?php echo $message; ?> </span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
